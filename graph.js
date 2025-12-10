@@ -8,7 +8,6 @@ window.addEventListener("resize", () => {
   const newHeight = window.innerHeight;
   svg.attr("width", newWidth).attr("height", newHeight);
 
-  // Update simulation center
   simulation.force("center", d3.forceCenter(newWidth / 2, newHeight / 2));
 });
 
@@ -31,10 +30,8 @@ const DarkSeaGreen = "#8FBC8F";
 const CadetBlue = "#5F9EA0";
 
 const initializeGraph = () => {
-  // Clear existing elements
   svg.selectAll("g").remove();
 
-  // start simulation
   simulation = d3
     .forceSimulation(graph.nodes)
     .force(
